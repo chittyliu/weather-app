@@ -10,10 +10,7 @@ class Weather extends Component {
           </p>
         )}
         {this.props.temperature && (
-          <p>
-            Temperature:{" "}
-            {Math.round(((this.props.temperature - 273.15) * 9) / 5 + 32)}°
-          </p>
+          <p>Temperature: {Math.round(this.props.temperature - 273.15)}°C</p>
         )}
         {this.props.humidity && <p>Humidity: {this.props.humidity} </p>}
         {this.props.description && <p>Condition: {this.props.description}</p>}
