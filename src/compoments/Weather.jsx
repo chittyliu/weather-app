@@ -4,12 +4,19 @@ class Weather extends Component {
   render() {
     return (
       <div>
-        <h3>
-          Location: {this.props.city}, {this.props.country}
-        </h3>
-        <h3>Temperature: {this.props.temperature}</h3>
-        <h3>Humidity: {this.props.humidity} </h3>
-        <h3>Condition: {this.props.description}</h3>
+        {this.props.city && this.props.country && (
+          <p>
+            Location: {this.props.city}, {this.props.country}
+          </p>
+        )}
+        {this.props.temperature && (
+          <p>
+            Temperature:{" "}
+            {Math.round(((this.props.temperature - 273.15) * 9) / 5 + 32)}°
+          </p>
+        )}
+        {this.props.humidity && <p>Humidity: {this.props.humidity} </p>}
+        {this.props.description && <p>Condition: {this.props.description}</p>}
       </div>
     );
   }
