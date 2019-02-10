@@ -32,18 +32,18 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        temperature: undefined,
-        humidity: undefined,
-        city: undefined,
-        country: undefined,
-        description: undefined,
+        // temperature: undefined,
+        // humidity: undefined,
+        // city: undefined,
+        // country: undefined,
+        // description: undefined,
         error: "Please enter a city."
       });
     }
   };
   render() {
     return (
-      <div>
+      <div className="container">
         <Title />
         <Form getWeather={this.getWeather} />
         <Weather

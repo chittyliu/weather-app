@@ -4,7 +4,7 @@ class Title extends Component {
   render() {
     return (
       <div>
-        <h1>Weather Title</h1>
+        <h1>Weather Finder</h1>
       </div>
     );
   }
