@@ -22,13 +22,28 @@ class App extends React.Component {
     );
     const data = await api_call.json();
     console.log(data);
+    this.setState({
+      temperature: data.main.temp,
+      humidity: data.main.humidity,
+      city: data.name,
+      country: data.sys.country,
+      description: data.weather[0].description,
+      error: ""
+    });
   };
   render() {
     return (
       <div>
         <Title />
         <Form getWeather={this.getWeather} />
-        <Weather />
+        <Weather
+          temperature={this.state.temperature}
+          humidity={this.state.humidity}
+          city={this.state.city}
+          country={this.state.country}
+          description={this.state.description}
+          error={this.state.error}
+        />
       </div>
     );
   }
