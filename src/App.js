@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "./compoments/Title";
-import Form from "./compoments/Form";
-import Weather from "./compoments/Weather";
+import Title from "./components/Title";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
 
 const API_KEY = "d0a10211ea3d36b0a6423a104782130e";
 
@@ -43,7 +43,16 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          backgroundColor: "#4060b8",
+          display: "grid",
+          alignItems: "center",
+          justifyContent: "space-around",
+          height: "-webkit-fill-available"
+        }}
+      >
         <Title />
         <Form getWeather={this.getWeather} />
         <Weather
