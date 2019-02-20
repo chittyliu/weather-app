@@ -23,14 +23,14 @@ class App extends Component {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
     );
     const data = await apiCall.json();
-    console.log(data.message);
+    // console.log(data.message);
     if (data.weather) {
       this.setState({
         clouds: data.weather["0"].description,
         humidity: data.main.humidity,
         pressure: data.main.pressure,
         temperature: data.main.temp,
-        error: undefined,
+        error: "",
         error_code: undefined
       });
     } else {
@@ -55,7 +55,8 @@ class App extends Component {
           clouds: this.state.clouds,
           humidity: this.state.humidity.toString() + "%",
           pressure: this.state.pressure.toString() + " hPa",
-          temperature: (this.state.temperature - 273.15).toFixed(1) + "C"
+          temperature: (this.state.temperature - 273.15).toFixed(1) + "C",
+          error: this.state.error
         }
       ];
       console.log(locationWeather);
