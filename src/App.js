@@ -30,7 +30,7 @@ class App extends Component {
         humidity: data.main.humidity,
         pressure: data.main.pressure,
         temperature: data.main.temp,
-        error: "",
+        error: undefined,
         error_code: undefined
       });
     } else {
@@ -55,8 +55,7 @@ class App extends Component {
           clouds: this.state.clouds,
           humidity: this.state.humidity.toString() + "%",
           pressure: this.state.pressure.toString() + " hPa",
-          temperature: (this.state.temperature - 273.15).toFixed(1) + "C",
-          error: this.state.error
+          temperature: (this.state.temperature - 273.15).toFixed(1) + "C"
         }
       ];
       console.log(locationWeather);
